@@ -5,15 +5,21 @@ const userSl = createSlice({
   initialState: [],
   reducers: {
     adduser(state, action) {
+      // this state means the state of only this slice,
+      //  arko useselector ma use vakostate chai whole store ko
+      // slice ko state ra tesma hune action (action.payload0)
       state.push(action.payload);
       console.log(action.payload);
     },
-    removeuser(state, action) {},
+    removeuser(state, action) {
+      console.log(action.payload);
+      state.splice(action.payload, 1);
+    },
     deleteuser(state, action) {},
   },
 });
 console.log(userSl.actions);
-export const { adduser } = userSl.actions;
+export const { adduser, removeuser } = userSl.actions;
 export default userSl.reducer;
 
 // import { createSlice } from "@reduxjs/toolkit";

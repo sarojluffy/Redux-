@@ -7,7 +7,7 @@ function App() {
   const chance = Chance();
   const dispatch = useDispatch(); //sends the data to the the store
   const abc = () => {
-    dispatch(adduser(chance.name({ suffix: true })));
+    dispatch(adduser(chance.name({ suffix: true }))); //dispatch send data to the store
   };
 
   return (
