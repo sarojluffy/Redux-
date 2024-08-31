@@ -15,11 +15,13 @@ const userSl = createSlice({
       console.log(action.payload);
       state.splice(action.payload, 1);
     },
-    deleteuser(state, action) {},
+    deleteuser(state, action) {
+      state.length = 0;
+    },
   },
 });
 console.log(userSl.actions);
-export const { adduser, removeuser } = userSl.actions;
+export const { adduser, removeuser, deleteuser } = userSl.actions;
 export default userSl.reducer;
 
 // import { createSlice } from "@reduxjs/toolkit";

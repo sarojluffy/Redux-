@@ -1,6 +1,6 @@
 import Chance from "chance";
 import { useDispatch } from "react-redux";
-import { adduser } from "./counterSlice";
+import { adduser, deleteuser } from "./counterSlice";
 import Display from "./Displayusers";
 
 function App() {
@@ -20,6 +20,16 @@ function App() {
 
       <div>
         <button>decrease</button>
+      </div>
+
+      <div>
+        <button
+          onClick={() => {
+            dispatch(deleteuser());
+          }}
+        >
+          delete all{" "}
+        </button>
       </div>
     </>
   );
